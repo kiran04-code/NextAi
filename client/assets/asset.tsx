@@ -57,7 +57,7 @@ interface Technology {
   
       },
       {
-        company: "Goldman Sachs",
+        company: "GoldmanSachs",
         role: "Backend Engineer",
         description: "Design secure, high-performance microservices for financial systems.",
         technologies: [
