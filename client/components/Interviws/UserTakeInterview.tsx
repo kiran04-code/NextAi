@@ -168,7 +168,7 @@ const Interview = () => {
   ))}
 </div>
       </div>
-      <div className='px-12 mt-10'>
+      <div className='md:px-12 mt-10 p-6'>
         <h1 className='md:text-4xl  font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#00e0ff] to-[#0047ff] text-2xl'>Take an  Interview</h1>
 
      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 p-5  mt-5">
