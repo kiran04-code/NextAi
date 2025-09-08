@@ -11,7 +11,7 @@ const Footer = () => {
  
           <div>
             <h1 className='text-2xl font-bold  text-[#53fff1] '>NextAI </h1>
-            <p className='md:text-7xl font-bold mt-1   bg-clip-text text-transparent bg-gradient-to-r from-[#00e0ff] to-[#0047ff]'>Sharpen your skills, ace your interviews</p>
+            <p className='md:text-7xl font-bold mt-1  text-2xl  bg-clip-text text-transparent bg-gradient-to-r from-[#00e0ff] to-[#0047ff]'>Sharpen your skills, ace your interviews</p>
           </div>
           
           {/* Quick Links */}
