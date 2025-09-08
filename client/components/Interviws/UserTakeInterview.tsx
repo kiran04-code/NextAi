@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Slice } from 'lucide-react'
+
 import Image from 'next/image'
 import React from 'react'
 import { FaReact } from "react-icons/fa";
