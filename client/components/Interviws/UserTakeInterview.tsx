@@ -123,7 +123,7 @@ const Interview = () => {
 
   return (
     <div>
-      <div className='md:px-12 px-6'>
+      <div className='md:px-12 p-8'>
         <h1 className='md:text-4xl  font-semibold bg-clip-text text-transparent bg-gradient-to-r text-center from-[#00e0ff] to-[#0047ff] text-xl'>Your Interviews</h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 p-5  mt-5">
   {InterViews.slice(0,4).map((data, index) => (
@@ -168,7 +168,7 @@ const Interview = () => {
   ))}
 </div>
       </div>
-      <div className='md:px-12 mt-10 p-6'>
+      <div className='md:px-12  mt-10 p-8'>
         <h1 className='md:text-4xl  font-semibold bg-clip-text text-transparent bg-gradient-to-r  text-center from-[#00e0ff] to-[#0047ff] text-2xl'>Take an  Interview</h1>
 
      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 p-5  mt-5">
