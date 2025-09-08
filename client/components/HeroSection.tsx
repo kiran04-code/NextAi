@@ -19,7 +19,7 @@ const HeroSection = () => {
         </div>
 
 
-        <div className="md:w-1/2 w-[400px] relative h-64 md:h-80">
+        <div className="md:w-1/2 w-[90vw] relative h-64 md:h-80">
           <Image
             src="/the-impact-of-agentic-ai-on-the-future-of-work-and-business-1024x563-removebg-preview.png"
             alt="AI Interview Practice Illustration"
