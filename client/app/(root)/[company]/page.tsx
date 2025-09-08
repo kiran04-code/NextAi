@@ -49,7 +49,6 @@ const Page = async ({ params }: ParamsProps) => {
     <div className="px-5 md:px-10 py-8">
       <div className="p-5 md:p-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-gradient-to-b from-[#070641] to-blue  rounded-4xl">
 
-        {/* Left Section */}
         <div className="flex flex-col md:flex-row items-center gap-5 text-center md:text-left">
           <Image
             src={`/${data.image}`}
@@ -78,10 +77,9 @@ const Page = async ({ params }: ParamsProps) => {
           </div>
         </div>
 
-        {/* Right Section */}
         <div className=''>
           <h1
-            className={`text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${getCompnayGrident(data.company)}`}
+            className={`text-2xl md:text-4xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-r ${getCompnayGrident(data.company)}`}
           >
             {data.company}
           </h1>
