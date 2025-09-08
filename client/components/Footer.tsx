@@ -6,10 +6,9 @@ const Footer = () => {
     <div className='md:p-8 p-5'>
       <div className='w-full bg-gradient-to-t from-[#060544]  flex flex-col items-center px-6 md:px-12 py-8 md:py-12 rounded-3xl text-white'>
         
-        {/* Top Section */}
         <div className='flex flex-col md:flex-col justify-between items-center w-full gap-6'>
           
-          {/* Logo / Site Info */}
+ 
           <div>
             <h1 className='text-2xl font-bold  text-[#53fff1] '>NextAI </h1>
             <p className='md:text-7xl font-bold mt-1   bg-clip-text text-transparent bg-gradient-to-r from-[#00e0ff] to-[#0047ff]'>Sharpen your skills, ace your interviews</p>
