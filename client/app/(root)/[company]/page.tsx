@@ -1,6 +1,8 @@
+"use client"
 import { InterViews } from '@/assets/asset';
 import Image from 'next/image';
-import React from 'react';
+import { useState } from 'react';
+import { IoIosCall } from "react-icons/io";
 import { FaRedo } from "react-icons/fa";
 import { MdCallEnd } from "react-icons/md";
 interface ParamsProps {
@@ -9,7 +11,7 @@ interface ParamsProps {
   };
 }
 
-const Page = async ({ params }: ParamsProps) => {
+const Page = ({ params }: ParamsProps) => {
   const { company } = params;
   console.log(company)
   const data = InterViews.find((item) => item.company === company);
@@ -21,6 +23,10 @@ const Page = async ({ params }: ParamsProps) => {
       </div>
     );
   }
+
+  const [call, setCall] = useState<boolean | null>(false);
+  const [isSpeaking, setIsSpeaking] = useState<boolean>(true);
+  const message = "What job experience level are you targeting?"
   const getCompnayGrident = (company: string) => {
     switch (company) {
       case "Netflix":
@@ -87,46 +93,61 @@ const Page = async ({ params }: ParamsProps) => {
         </div>
       </div>
       <div className="min-h-screen flex flex-col items-center justify-center  text-white p-6">
-        {/* Top Section - AI & User */}
         <div className="flex flex-col md:flex-row gap-10 items-center">
 
-          {/* AI Interviewer */}
+
           <div className="w-56 h-56 flex flex-col justify-center items-center rounded-2xl bg-gradient-to-tr from-[#4e5dff] to-[#7f53ff] shadow-lg">
-            <div className="w-20 h-20 flex justify-center items-center bg-white rounded-full shadow-md">
+            <div
+              className={`w-20 h-20 flex justify-center items-center rounded-full shadow-md
+      ${isSpeaking ? "bg-blue-100 opacity-75 animate-ping" : "bg-white"}`}
+            >
               <span className="text-3xl text-black">💬</span>
             </div>
             <p className="mt-4 text-lg font-semibold">AI Interviewer</p>
           </div>
 
+
           {/* User */}
           <div className="w-56 h-56 flex flex-col justify-center items-center rounded-2xl bg-[#111] shadow-lg">
-            <div className="w-20 h-20 relative">
+            <div className="relative w-20 h-20">
+              {isSpeaking && (
+                <span className="absolute inset-0 rounded-full bg-blue-500 opacity-75 animate-ping"></span>
+              )}
               <Image
-                src="/images.png" // replace with your image
+                src="/images.png"
                 alt="User"
                 fill
-                className="rounded-full object-cover"
+                className="rounded-full object-cover relative z-10"
               />
             </div>
-            <p className="mt-4 text-lg font-semibold">Adrian (You)</p>
+            <p className="mt-4 text-lg font-semibold">You</p>
           </div>
+
         </div>
 
         {/* Question */}
-        <div className="mt-10 px-6 py-3 rounded-lg bg-[#1c1c1e] text-center shadow-md text-lg">
-          What job <span className="px-2 py-1 bg-[#333] rounded-md">experience level</span> are you targeting?
-        </div>
+        {
+          message.length > 0 ? <div className="mt-10 px-9 py-3 rounded-lg bg-[#1c1c1e] text-center shadow-md text-lg">
+            {message}
+          </div> : null
+        }
 
         {/* Controls */}
         <div className="mt-10 flex gap-6">
-          <button className="flex items-center gap-2 px-5 py-3 bg-[#1c1c1e] rounded-full hover:bg-[#292929] transition">
-            <FaRedo />
-            Repeat
-          </button>
-          <button className="flex px-2 items-center gap-2 md:px-5 md:py-3 text-[10px] text-nowrap bg-red-600 rounded-full hover:bg-red-700 transition">
-            <MdCallEnd />
-            Leave Interview
-          </button>
+          {
+            call ? <div className='mt-10 flex gap-6'><button className="flex items-center gap-2 px-5 py-3 bg-[#1c1c1e] rounded-full hover:bg-[#292929] transition">
+              <FaRedo />
+              Repeat
+            </button>
+              <button onClick={() => setCall(false)} className="flex px-2 items-center gap-2 md:px-5 md:py-3 text-[10px] text-nowrap bg-red-600 rounded-full hover:bg-red-700 transition">
+                <MdCallEnd />
+                Leave Interview
+              </button></div> : <div><button onClick={() => setCall(true)} className="flex px-2 items-center gap-2 md:px-6 md:py-2 text-[15px] text-nowrap bg-green-600 rounded-full hover:bg-green-700 transition">
+                <IoIosCall />
+                Call
+              </button></div>
+          }
+
         </div>
       </div>
     </div>
