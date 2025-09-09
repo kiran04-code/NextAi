@@ -24,8 +24,8 @@ const Page = ({ params }: ParamsProps) => {
     );
   }
 
-  const [call, setCall] = useState<boolean | null>(false);
-  const [isSpeaking, setIsSpeaking] = useState<boolean>(true);
+  // const [call, setCall] = useState<boolean | null>(false);
+  // const [isSpeaking, setIsSpeaking] = useState<boolean>(true);
   const message = "What job experience level are you targeting?"
   const getCompnayGrident = (company: string) => {
     switch (company) {
